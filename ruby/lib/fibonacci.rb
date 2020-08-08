@@ -1,3 +1,10 @@
 def fibonacci(number)
-  # TODO
+  @cache ||= {}
+  @cache[number] ||= (
+    if number <= 1
+      number
+    else
+      fibonacci(number - 2) + fibonacci(number - 1)
+    end
+  )
 end
